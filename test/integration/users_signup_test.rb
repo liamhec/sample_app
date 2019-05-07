@@ -10,9 +10,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                          password:              "foo",
                                          password_confirmation: "bar" } }
     end
-    assert_template 'users/new'
-     assert_select 'div#<CSS id for error explanation>'
-    assert_select 'div.<CSS class for field with error>'
+
   end 
   
   test "valid signup information" do
