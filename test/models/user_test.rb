@@ -61,4 +61,8 @@ class UserTest < ActiveSupport::TestCase
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
   
+  test "authenticated? should return false for a user with nil digest" do
+    assert_not @user.authenticated?(:remember, '')
+  end
+  
 end
